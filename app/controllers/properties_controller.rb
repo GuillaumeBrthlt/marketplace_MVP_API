@@ -1,4 +1,4 @@
-# HAPPY comment
+
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show update destroy]
   before_action :authenticate_user!, only: %i[new create edit update destroy]
@@ -7,7 +7,7 @@ class PropertiesController < ApplicationController
   def index
     @properties = Property.all
 
-    render json: @properties
+    render json: PropertySerializer.new(@properties).serializable_hash[:data]
   end
 
   # GET /properties/1
@@ -51,6 +51,6 @@ class PropertiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def property_params
-    params.require(:property).permit(:title, :price, :description, :user_id, :address, :city, :zipcode, :aera, :rooms, :furnished, :car_park, :has_outside, :basement)
+    params.require(:property).permit(:title, :price, :description, :user_id, :picture)
   end
 end
