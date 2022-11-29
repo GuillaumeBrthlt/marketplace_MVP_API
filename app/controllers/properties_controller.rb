@@ -1,4 +1,4 @@
-# HAPPY comment
+
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show update destroy]
   before_action :authenticate_user!, only: %i[new create edit update destroy]
@@ -7,7 +7,7 @@ class PropertiesController < ApplicationController
   def index
     @properties = Property.all
 
-    render json: @properties
+    render json: PropertySerializer.new(@properties).serializable_hash[:data]
   end
 
   # GET /properties/1
