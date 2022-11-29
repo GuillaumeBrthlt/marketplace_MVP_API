@@ -32,6 +32,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_080601) do
     t.string "address"
     t.string "city"
     t.integer "zipcode"
+    t.integer "aera"
+    t.integer "rooms"
+    t.boolean "furnished"
+    t.boolean "car_park"
+    t.boolean "has_outside"
+    t.boolean "basement"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
