@@ -27,3 +27,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+dockerfile
+fly.toml
+.dockerignore
+!/lib/tasks/fly.rake
