@@ -38,9 +38,7 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1
   def destroy
     return unless @property.user == current_user
-    if @property.picture.attached?
-      @property.picture.purge
-    end
+
     @property.destroy
   end
 
