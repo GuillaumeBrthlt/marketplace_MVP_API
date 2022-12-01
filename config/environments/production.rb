@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: 'https://dev-marketplace-api.fly.dev/'
+  host: 'https://dev-marketplace-api-immo.fly.dev/'
 }
 
 Rails.application.configure do
